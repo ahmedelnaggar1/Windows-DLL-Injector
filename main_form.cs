@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DLL_Injector
 {
-    public partial class main_form : Form
+    public partial class mainForm : Form
     {
-        public main_form()
+        public mainForm()
         {
             InitializeComponent();
         }
@@ -30,6 +31,22 @@ namespace DLL_Injector
             if(dllLocationDialog.ShowDialog() == DialogResult.OK)
             {
                 dllTxtBox.Text = dllLocationDialog.FileName;
+            }
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            // Once the application loads
+            // Get a list of all current running processes
+            // Show list in List appListBox
+
+            // Get all running processes
+            Process[] allProcesses = Process.GetProcesses();
+            
+            // Add processes to appListBox
+            foreach(Process process in allProcesses)
+            {
+                appListBox.Items.Add(process.ProcessName);
             }
         }
     }

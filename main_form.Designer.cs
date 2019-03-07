@@ -1,6 +1,6 @@
 ﻿namespace DLL_Injector
 {
-    partial class main_form
+    partial class mainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -69,7 +69,7 @@
             this.selectBtn.UseVisualStyleBackColor = true;
             this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
             // 
-            // main_form
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,8 +78,9 @@
             this.Controls.Add(this.dllTxtBox);
             this.Controls.Add(this.appListBox);
             this.Controls.Add(this.injectBtn);
-            this.Name = "main_form";
+            this.Name = "mainForm";
             this.Text = "DLL Injector";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
