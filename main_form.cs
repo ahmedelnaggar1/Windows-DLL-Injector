@@ -17,14 +17,20 @@ namespace DLL_Injector
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void selectBtn_Click(object sender, EventArgs e)
         {
+            OpenFileDialog dllLocationDialog = new OpenFileDialog();
 
-        }
+            dllLocationDialog.Title = "Select DLL file";
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            // Allow the user to only select DLL files
+            dllLocationDialog.Filter = "DLL Files (*.dll) | *.dll";
+            
+            // Show the user a file dialog and get selected file
+            if(dllLocationDialog.ShowDialog() == DialogResult.OK)
+            {
+                dllTxtBox.Text = dllLocationDialog.FileName;
+            }
         }
     }
 }

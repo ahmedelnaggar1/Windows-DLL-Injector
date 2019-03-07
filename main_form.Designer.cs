@@ -36,6 +36,7 @@
             // 
             // injectBtn
             // 
+            this.injectBtn.Enabled = false;
             this.injectBtn.Location = new System.Drawing.Point(479, 216);
             this.injectBtn.Name = "injectBtn";
             this.injectBtn.Size = new System.Drawing.Size(75, 33);
@@ -66,6 +67,7 @@
             this.selectBtn.TabIndex = 3;
             this.selectBtn.Text = "Select DLL";
             this.selectBtn.UseVisualStyleBackColor = true;
+            this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
             // 
             // main_form
             // 
