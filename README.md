@@ -5,4 +5,4 @@ An application that allows for easy DLL injections into executable files on Wind
 To be written...
 
 ## Licence
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/ahmedelnaggar1/Windows-DLL-Injector/blob/master/LICENSE)
