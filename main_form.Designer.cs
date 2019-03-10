@@ -43,6 +43,7 @@
             this.injectBtn.TabIndex = 0;
             this.injectBtn.Text = "Inject";
             this.injectBtn.UseVisualStyleBackColor = true;
+            this.injectBtn.Click += new System.EventHandler(this.injectBtn_Click);
             // 
             // appListBox
             // 
@@ -67,7 +68,7 @@
             this.selectBtn.TabIndex = 3;
             this.selectBtn.Text = "Select DLL";
             this.selectBtn.UseVisualStyleBackColor = true;
-            this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
+            this.selectBtn.Click += new System.EventHandler(this.SelectBtn_Click);
             // 
             // mainForm
             // 
@@ -80,7 +81,7 @@
             this.Controls.Add(this.injectBtn);
             this.Name = "mainForm";
             this.Text = "DLL Injector";
-            this.Load += new System.EventHandler(this.mainForm_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
