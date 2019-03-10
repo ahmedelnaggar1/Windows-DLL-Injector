@@ -1,4 +1,4 @@
-# DLL-Injector
+# Windows-DLL-Injector
 An application that allows for easy DLL injections into executable files on Windows.
 
 ## Usage
