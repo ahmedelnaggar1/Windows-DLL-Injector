@@ -13,10 +13,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 			break;
 		}
 		case DLL_THREAD_ATTACH:
-		{
-			MessageBoxA(NULL, "Works!", "Dll injected successfully!", MB_OK);
-			break;
-		}
 		case DLL_THREAD_DETACH:
 		case DLL_PROCESS_DETACH:
         break;

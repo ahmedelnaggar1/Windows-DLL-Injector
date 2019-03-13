@@ -77,13 +77,41 @@ namespace DLL_Injector
             // Get all running processes
             Process[] allProcesses = Process.GetProcesses();
 
+            ImageList appIcons = new ImageList();
+            Icon appIcon;
+
+            appListView.SmallImageList = appIcons;
+
             // Add processes to appListBox
             foreach (Process process in allProcesses)
             {
-                appListBox.Items.Add(process.ProcessName);
+                // Get the icon of the process
+                // Get the critical info from the process such as name
+                // Add to appListView
+                try
+                {
+                    appIcon = Icon.ExtractAssociatedIcon(process.MainModule.FileName);
+
+                    appIcons.Images.Add(appIcon.GetHashCode().ToString(), appIcon.ToBitmap());
+
+                    string[] row = 
+                    {
+                        process.ProcessName,
+                        process.Id.ToString(),
+                        process.MainModule.FileName
+                    };
+
+                    ListViewItem item = new ListViewItem(row)
+                    {
+                        ImageKey = appIcon.GetHashCode().ToString()
+                    };
+
+                    appListView.Items.Add(item);
+                }
+                catch { } // Access is denied
             }
         }
-
+    
         private void injectBtn_Click(object sender, EventArgs e)
         {
             // Get the handle of the target process
@@ -91,7 +119,7 @@ namespace DLL_Injector
             // Using the stored location, create a thread that will run LoadLibraryA to load target DLL
 
             // Get target process handle
-            Process targetProcess = Process.GetProcessesByName(appListBox.SelectedItem.ToString())[0];
+            Process targetProcess = Process.GetProcessesByName(appListView.FocusedItem.Text)[0];
 
             IntPtr processHandle = OpenProcess(PROCESS_CREATE_THREAD | PROCESS_QUERY_INFORMATION | PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE,
                                    false, targetProcess.Id);
