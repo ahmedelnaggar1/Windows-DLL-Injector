@@ -140,5 +140,11 @@ namespace DLL_Injector
             // Create thread to execute LoadLibraryA with the DLL as a parameter
             CreateRemoteThread(processHandle, IntPtr.Zero, 0, loadLibraryAddr, allocatedMemoryAddress, 0, IntPtr.Zero);
         }
+
+        private void creatorLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Link to GitHub
+            Process.Start("https://github.com/ahmedelnaggar1");
+        }
     }
 }

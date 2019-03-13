@@ -35,6 +35,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.creatorLabel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // injectBtn
@@ -97,18 +98,31 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "pid";
+            this.columnHeader2.Text = "PID";
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "location";
-            this.columnHeader3.Width = 234;
+            this.columnHeader3.Text = "Location";
+            this.columnHeader3.Width = 387;
+            // 
+            // creatorLabel
+            // 
+            this.creatorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.creatorLabel.AutoSize = true;
+            this.creatorLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.creatorLabel.Location = new System.Drawing.Point(7, 234);
+            this.creatorLabel.Name = "creatorLabel";
+            this.creatorLabel.Size = new System.Drawing.Size(144, 13);
+            this.creatorLabel.TabIndex = 6;
+            this.creatorLabel.Text = "Created by Ahmed El-Naggar";
+            this.creatorLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.creatorLabel_LinkClicked);
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 261);
+            this.Controls.Add(this.creatorLabel);
             this.Controls.Add(this.appListView);
             this.Controls.Add(this.selectBtn);
             this.Controls.Add(this.dllTxtBox);
@@ -116,6 +130,7 @@
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 300);
             this.Name = "mainForm";
+            this.ShowIcon = false;
             this.Text = "DLL Injector";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
@@ -132,6 +147,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.LinkLabel creatorLabel;
     }
 }
 
