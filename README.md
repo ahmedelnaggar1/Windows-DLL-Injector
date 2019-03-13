@@ -1,7 +1,7 @@
 # Windows-DLL-Injector
 An application that allows for easy DLL injections into executable files on Windows.
 
-![](https://i.imgur.com/x7hwsKK.png)
+![](https://i.imgur.com/Vw7x8md.png)
 
 ## Usage
 
